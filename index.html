@@ -16,9 +16,9 @@
       data: {client_id: accessToken},
       success: function(data){
           console.log(data);
-          for(x in data.data){
-            $('ul').append('<li><img src="'+data.data[x].images.low_resolution.url+'"></li>');  
-          }
+          $.each(data.data, function(index, elem){
+              $('ul').append('<li><img src="'+elem.images.low_resolution.url+'"></li>');  
+          });
       },
       error: function(data){
           console.log(data);
