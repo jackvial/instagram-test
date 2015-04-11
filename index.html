@@ -6,24 +6,5 @@
 <body>
 <p>Hello Foto</p>
 <ul></ul>
-<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
-<scirpt>
-  var accessToken = '81b86f958c194353a278f347f84c1c77';
-  $.ajax({
-      url: 'https://api.instagram.com/v1/media/popular',
-      dataType: 'jsonp',
-      type: 'GET',
-      data: {client_id: accessToken},
-      success: function(data){
-          console.log(data);
-          $.each(data.data, function(index, elem){
-              $('ul').append('<li><img src="'+elem.images.low_resolution.url+'"></li>');  
-          });
-      },
-      error: function(data){
-          console.log(data);
-      }
-  });
-</scirpt>  
 </body>
 </html>
